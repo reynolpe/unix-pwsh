@@ -2,7 +2,7 @@
 # Does the the rough equivalent of dir /s /b. For example, dirs *.png is dir /s /b *.png
 function dirs {
     if ($args.Count -gt 0) {
-        Get-ChildItem -Recurse -Include "$args" -erroraction SilentlyContinue | Foreach-Object FullName
+        Get-ChildItem -Recurse -Include "$args" -ErrorAction silentlycontinue | Foreach-Object FullName
     } else {
         Get-ChildItem -Recurse | Foreach-Object FullName
     }
